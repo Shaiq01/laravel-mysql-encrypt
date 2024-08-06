@@ -1,0 +1,56 @@
+{
+    "name": "danielpardamean/laravel-mysql-encrypt",
+    "description": "Laravel 9.x Database encryption mysql side",
+    "keywords": [
+        "laravel",
+        "danielpardamean",
+        "mysql",
+        "encryption",
+        "php",
+        "pii"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel pardamean",
+            "email": "danielpardamean14@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/database": "^9.0",
+        "illuminate/support": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DanielPardamean\\MysqlEncrypt\\": "src/",
+            "DanielPardamean\\MysqlEncrypt\\Tests\\": "tests/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DanielPardamean\\MysqlEncrypt\\Providers\\LaravelServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "orchestra/testbench": "^6.28",
+        "pestphp/pest": "^1.23",
+        "pestphp/pest-plugin-laravel": "^1.4"
+    },
+    "scripts": {
+        "test": "./vendor/bin/pest"
+    }
+}
