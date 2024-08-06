@@ -26,8 +26,8 @@ class DecryptSelectScope implements Scope
             return $builder->addSelect(...$columns);
         }
 
-        $select = collect($columns)->map(function($column) use ($encryptable) {
-            return (in_array($column, $encryptable)) ? db_decrypt($column) : $column;
+        $select = collect($columns)->map(function($column) use ($encryptable, $model) {
+            return (in_array($column, $encryptable)) ? db_decrypt($column, $model->getTable()) : $model->getTable() . '.' . $column;
         });
 
         return $builder->addSelect(...$select);

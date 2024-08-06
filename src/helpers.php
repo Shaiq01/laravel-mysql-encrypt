@@ -30,9 +30,13 @@ if (!function_exists('db_decrypt')) {
      * @param  mixed $column
      * @return \Illuminate\Database\Query\Expression
      */
-    function db_decrypt($column)
+    function db_decrypt($column, $table = '')
     {
         $key = config('mysql-encrypt.key');
+
+        if(!empty($table)){
+            $column = $table . '.' . $column;
+        }
 
         return DB::raw("AES_DECRYPT({$column}, '{$key}') AS '{$column}'");
     }
