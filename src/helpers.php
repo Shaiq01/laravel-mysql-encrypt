@@ -35,7 +35,8 @@ if (!function_exists('db_decrypt')) {
         $key = config('mysql-encrypt.key');
 
         if(!empty($table)){
-            $column = $table . '.' . $column;
+            $table_column = $table . '.' . $column;
+            return DB::raw("AES_DECRYPT({$table_column}, '{$key}') AS '{$column}'");
         }
 
         return DB::raw("AES_DECRYPT({$column}, '{$key}') AS '{$column}'");
