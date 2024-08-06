@@ -1,9 +1,9 @@
 {
-    "name": "danielpardamean/laravel-mysql-encrypt",
+    "name": "shaiq01/laravel-mysql-encrypt",
     "description": "Laravel 9.x Database encryption mysql side",
     "keywords": [
         "laravel",
-        "danielpardamean",
+        "shaiq01",
         "mysql",
         "encryption",
         "php",
@@ -12,8 +12,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Daniel pardamean",
-            "email": "danielpardamean14@gmail.com"
+            "name": "Shaiq Ul Hassan",
+            "email": "shaiqhassan01@gmail.com"
         }
     ],
     "require": {
