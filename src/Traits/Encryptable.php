@@ -111,4 +111,34 @@ trait Encryptable
         /** @var Builder $query */
         return $query->orderByRaw(db_decrypt_string($column, $direction, ''));
     }
+
+    /**
+     * orWhere like for encrypted columns
+     *
+     * @param $query
+     * @param $column
+     * @param $value
+     *
+     * @return mixed
+     */
+    public function scopeOrWhereEncryptedLike($query, $column, $value)
+    {
+        /** @var Builder $query */
+        return $query->orWhereRaw(db_decrypt_string($column, '%' . $value . '%', 'LIKE'));
+    }
+
+    /**
+     * where like for encrypted columns
+     *
+     * @param $query
+     * @param $column
+     * @param $value
+     *
+     * @return mixed
+     */
+    public function scopeWhereEncryptedLike($query, $column, $value)
+    {
+        /** @var Builder $query */
+        return $query->whereRaw(db_decrypt_string($column, '%' . $value . '%', 'LIKE'));
+    }
 }
